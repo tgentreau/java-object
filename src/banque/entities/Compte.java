@@ -1,23 +1,23 @@
 package banque.entities;
 
 public class Compte {
-    protected int numCompte;
-    protected int soldeCompte;
+    protected String numCompte;
+    protected double soldeCompte;
 
-    public Compte(int numCompte, int soldeCompte) {
+    public Compte(String numCompte, double soldeCompte) {
         this.numCompte = numCompte;
         this.soldeCompte = soldeCompte;
     }
 
-    public int getNumCompte() {
+    public String getNumCompte() {
         return numCompte;
     }
 
-    public void setNumCompte(int numCompte) {
+    public void setNumCompte(String numCompte) {
         this.numCompte = numCompte;
     }
 
-    public int getSoldeCompte() {
+    public double getSoldeCompte() {
         return soldeCompte;
     }
 
