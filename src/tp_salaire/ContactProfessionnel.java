@@ -24,4 +24,14 @@ public class ContactProfessionnel extends Contact{
     public void setAdresseEntreprise(String adresseEntreprise) {
         this.adresseEntreprise = adresseEntreprise;
     }
+
+    @Override
+    public String toString() {
+        return "ContactProfessionnel{" +
+                "numTelephone='" + numTelephone + '\'' +
+                ", mail='" + mail + '\'' +
+                ", service='" + service + '\'' +
+                ", adresseEntreprise='" + adresseEntreprise + '\'' +
+                '}';
+    }
 }

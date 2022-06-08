@@ -1,11 +1,11 @@
 package tp_salaire;
 
-public class Employes extends Personne {
+public abstract class Employes extends Personne {
     protected String matricule;
 
-    public Employes(int numRue, String rue, int cp, String ville, String nom, String prenom, String nbrSecuSociale, Adresse adresse, String matricule) {
-        super(numRue, rue, cp, ville, nom, prenom, nbrSecuSociale, adresse);
-        this.matricule = matricule;
+    public Employes(String nom, String prenom, String nbrSecuSociale, Adresse adresse, String matricule, Contact contact, ContactProfessionnel contactProfessionnel) {
+        super(nom, prenom, nbrSecuSociale, adresse, contact, contactProfessionnel);
+        setMatricule(matricule);
     }
 
     public String getMatricule() {
@@ -17,42 +17,15 @@ public class Employes extends Personne {
     }
 
     @Override
-    public String getNom() {
-        return null;
-    }
-
-    @Override
-    public void setNom(String nom) {
-
-    }
-
-    @Override
-    public String getPrenom() {
-        return null;
-    }
-
-    @Override
-    public void setPrenom(String prenom) {
-
-    }
-
-    @Override
-    public String getNbrSecuSociale() {
-        return null;
-    }
-
-    @Override
-    public void setNbrSecuSociale(String nbrSecuSociale) {
-
-    }
-
-    @Override
-    public Adresse getAdresse() {
-        return null;
-    }
-
-    @Override
-    public void setAdresse(Adresse adresse) {
-
+    public String toString() {
+        return "Employes{" +
+                "matricule='" + matricule + '\'' +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", nbrSecuSociale='" + nbrSecuSociale + '\'' +
+                ", adresse=" + adresse.toString() +
+                ", contact=" + contact.toString() +
+                ", contactProfessionnel=" + contactProfessionnel.toString() +
+                '}';
     }
 }

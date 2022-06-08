@@ -1,5 +1,7 @@
 package tp_salaire;
 
 public interface Calculable {
-    int salaire();
+    double salaireBrut();
+
+    double salaireNet();
 }
