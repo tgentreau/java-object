@@ -11,7 +11,7 @@ public class Commercial extends Employes implements Calculable{
 
     @Override
     public double salaireBrut() {
-        double salaire = chiffreAffaire * (POURCENTAGECA / chiffreAffaire) * 100;
+        double salaire = chiffreAffaire * (POURCENTAGECA * chiffreAffaire) / 100;
         return salaire;
     }
 
@@ -19,7 +19,8 @@ public class Commercial extends Employes implements Calculable{
     public double salaireNet() {
         double salaireBrut = salaireBrut();
         double salaireNet = (salaireBrut / charges) * 100;
-        return salaireNet;
+        double salaireNetMensuel = salaireNet / 12;
+        return salaireNetMensuel;
     }
 
     @Override
@@ -29,8 +30,10 @@ public class Commercial extends Employes implements Calculable{
                 "Pourcentage CA=" + POURCENTAGECA +
                 ", chiffre d'affaire=" + chiffreAffaire +
                 ", salaireBrut=" + salaireBrut() +
-                ", salaireNet=" + salaireNet() +
+                ", salaireNetMensuel=" + salaireNet() +
                 '}';
     }
+
+    public void trouverNouveauContact() {}
 
 }

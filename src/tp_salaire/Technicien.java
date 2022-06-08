@@ -18,8 +18,9 @@ public class Technicien extends Employes  implements Calculable{
     @Override
     public double salaireNet() {
         double salaireBrut = salaireBrut();
-        double salaireNet = (salaireBrut / charges) * 100;
-        return salaireNet;
+        double salaireNet = (salaireBrut * charges) / 100;
+        double salaireNetMensuel = salaireNet / 12;
+        return salaireNetMensuel;
     }
 
     @Override
@@ -29,7 +30,9 @@ public class Technicien extends Employes  implements Calculable{
                 "heureParAns=" + heureParAns +
                 ", tauxJournalier=" + tauxJournalier +
                 ", salaireBrut=" + salaireBrut() +
-                ", salaireNet=" + salaireNet() +
+                ", salaireNetMensuel=" + salaireNet() +
                 '}';
     }
+
+    public void fabriquerEtControlerLesProduits() {}
 }

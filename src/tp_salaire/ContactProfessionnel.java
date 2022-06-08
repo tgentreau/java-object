@@ -2,8 +2,8 @@ package tp_salaire;
 
 public class ContactProfessionnel extends Contact{
     String service;
-    String adresseEntreprise;
-    public ContactProfessionnel(String numTelephone, String mail, String service, String adresseEntreprise) {
+    Adresse adresseEntreprise;
+    public ContactProfessionnel(String numTelephone, String mail, String service, Adresse adresseEntreprise) {
         super(numTelephone, mail);
         this.service = service;
         this.adresseEntreprise = adresseEntreprise;
@@ -17,11 +17,11 @@ public class ContactProfessionnel extends Contact{
         this.service = service;
     }
 
-    public String getAdresseEntreprise() {
+    public Adresse getAdresseEntreprise() {
         return adresseEntreprise;
     }
 
-    public void setAdresseEntreprise(String adresseEntreprise) {
+    public void setAdresseEntreprise(Adresse adresseEntreprise) {
         this.adresseEntreprise = adresseEntreprise;
     }
 
@@ -31,7 +31,7 @@ public class ContactProfessionnel extends Contact{
                 "numTelephone='" + numTelephone + '\'' +
                 ", mail='" + mail + '\'' +
                 ", service='" + service + '\'' +
-                ", adresseEntreprise='" + adresseEntreprise + '\'' +
+                ", adresseEntreprise='" + adresseEntreprise.toString() + '\'' +
                 '}';
     }
 }

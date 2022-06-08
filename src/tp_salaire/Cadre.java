@@ -19,7 +19,8 @@ public class Cadre extends Employes implements Calculable{
     public double salaireNet() {
         double salaireBrut = salaireBrut();
         double salaireNet = (salaireBrut / charges) * 100;
-        return salaireNet;
+        double salaireNetMensuel = salaireNet / 12;
+        return salaireNetMensuel;
     }
 
     @Override
@@ -29,7 +30,9 @@ public class Cadre extends Employes implements Calculable{
                 "nbrJour=" + nbrJour +
                 ", tauxJournalier=" + tauxJournalier +
                 ", salaireBrut=" + salaireBrut() +
-                ", salaireNet=" + salaireNet() +
+                ", salaireNetMensuel=" + salaireNet()  +
                 '}';
     }
+
+    public void gererProjet() {}
 }
