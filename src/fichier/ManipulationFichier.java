@@ -14,6 +14,9 @@ public class ManipulationFichier {
     public static void main(String[] args) throws IOException {
         Path path = Paths.get("recensement.csv");
         Path pathDestination = Paths.get("recensement2.csv");
+        Files.deleteIfExists(pathDestination);
+        pathDestination = Paths.get("recensement2.csv");
+        Files.write(pathDestination, "".getBytes());
         List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
 
         String[] parts = null;
@@ -26,7 +29,8 @@ public class ManipulationFichier {
         }
         for (Ville ville : villes) {
             if(Integer.parseInt(ville.population) >= 25000) {
-                Files.write(pathDestination, Collections.singleton(ville.getNomVille() + ";" + ville.getCodeDepartement() + ";" + ville.getPopulation()), StandardCharsets.UTF_8, StandardOpenOption.APPEND);
+//                Files.write(pathDestination, Collections.singleton(ville.getNomVille() + ";" + ville.getCodeDepartement() + ";" + ville.getPopulation()), StandardCharsets.UTF_8, StandardOpenOption.APPEND);
+                Files.writeString(pathDestination, "\n" + ville.getNomVille() + ";" + ville.getCodeDepartement() + ";" + ville.getPopulation(), StandardOpenOption.APPEND);
             }
         }
     }
