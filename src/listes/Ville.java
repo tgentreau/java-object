@@ -2,12 +2,28 @@ package listes;
 
 import java.util.*;
 
-public class Ville {
+public class Ville implements Comparable<Ville>{
     public String nom;
     public int nbrHabitant;
 
     public Ville(String nom, int nbrHabitant) {
         this.nom = nom;
+        this.nbrHabitant = nbrHabitant;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public int getNbrHabitant() {
+        return nbrHabitant;
+    }
+
+    public void setNbrHabitant(int nbrHabitant) {
         this.nbrHabitant = nbrHabitant;
     }
 
@@ -63,5 +79,16 @@ public class Ville {
         System.out.println(villePlus.toString());
         System.out.println(villeMoins.toString());
         System.out.println(villes);
+    }
+
+    @Override
+    public int compareTo(Ville o) {
+        if(this.nom.charAt(0) > o.nom.charAt(0)) {
+            return 1;
+        }
+        if(this.nom.charAt(0) < o.nom.charAt(0)) {
+            return -1;
+        }
+        return 0;
     }
 }
