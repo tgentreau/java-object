@@ -10,6 +10,8 @@ public class Ville  {
         map.add(new listes.Ville("Toulouse", 90000));
         Collections.sort(map);
         System.out.println(map);
+        Collections.sort(map, new VilleNbrHabitantComparator());
+        System.out.println(map);
     }
 
 }
