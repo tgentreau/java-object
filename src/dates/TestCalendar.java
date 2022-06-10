@@ -8,9 +8,10 @@ import java.util.Locale;
 public class TestCalendar {
 
         public static void main(String[] args) {
-            SimpleDateFormat formateur2 = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss", Locale.FRANCE);
+            Locale france = Locale.FRANCE;
+            SimpleDateFormat formateur2 = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss", france);
             Calendar calendar = Calendar.getInstance();
-            calendar.set(2016, 6, 19, 23, 59, 30);
+            calendar.set(2016, 4, 19, 23, 59, 30);
             Date date = calendar.getTime();
             String str = formateur2.format(date);
             System.out.println(str);
