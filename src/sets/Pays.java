@@ -91,6 +91,9 @@ public class Pays {
             } else if(pay.continent.equals(Continent.ASIE)) {
                 compteurAS++;
             }
+            StringBuilder builder2 = new StringBuilder();
+            builder2.append(pay.nom).append(" ").append(pay.continent).append("\n");
+            System.out.println(builder2);
         }
 //        pays.remove(paysAvecPibTotalMin);
         System.out.println(paysAvecPibMax.toString());
